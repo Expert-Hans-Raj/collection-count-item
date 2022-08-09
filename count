@@ -1,0 +1,13 @@
+ <div class="page-width count_pagination">
+   {%- paginate collection.products by section.settings.products_per_page -%}
+<div id="pagination" class="desktop-12 mobile-3">
+  <span class="count"> Showing
+    <span class="pagination_page">{{ paginate.current_offset | plus: 1 }}</span>
+    - <span class="pagination_p">{% if paginate.next %}{{ paginate.current_offset | plus: paginate.page_size }}{% else %}{{ paginate.items }}{% endif %}</span>
+    <span class="pagination_of">of <span class="pagination_product">{{ paginate.items }}</span> results </span>
+  </span>
+</div>
+
+
+       
+   {%- endpaginate -%}
